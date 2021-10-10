@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME by Shyann Jobe</title>
+    <title>Sum of All Fears by Shyann Jobe</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="img/mark-white.png" class="d-inline-block aligin-text-top" height="35"> 
-                APP NAME
+                Sum of All Fears
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
                         <a class="nav-link active" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">The Repo</a>
+                        <a class="nav-link" href="https://github.com/helloshyann/fears-challenge" target="_blank">The Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://helloshyann.com" target="_blank">Portfolio</a>
@@ -75,7 +75,7 @@
         <div class="container px-5 my-5">
             <div class="card text-center p-3">
                 <h1 class="fw-bolder animate__animated animate__bounceIn">View the Code</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+                <p class="lead fw-normal text-muted mb-0">A simple way to see how this program was written.</p>
             </div>
 
             <hr>
@@ -83,24 +83,36 @@
             <div class="row row-cols-1 gx-5">
                 <!-- Code Accordion 1-->
                 <div class="col col-md-8">                   
-                    <h2 class="fw-bolder mb-3">JavaScript, HTML, & CSS</h2>
+                    <h2 class="fw-bolder mb-3">JavaScript Functions</h2>
                     <div class="accordion mb-5" id="accordionExample">
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">JavaScript</button></h3>
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                function addForX()
+                            </button></h3>
                             <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
-                                            
-                                                Swal.fire(msg);
-                                            }
+                                            //Button Event
+                                            function addForX() {
+                                                let result = "";
+                                                let inputX = document.getElementById('inputX').value;
+                                                let val1 = Number(document.getElementById("input3").value);
+                                                let val2 = Number(document.getElementById("input7").value);
+                                                let val3 = Number(document.getElementById("input10").value);
+                                                let val4 = Number(document.getElementById("input15").value);
+
+                                                if (inputX == "" || val1 == "" || val2 == "" || val3 == "" || val4 == "") {
+                                                    document.getElementById("resultPlacement").innerHTML = 
+                                                    `Uh oh! You must input a number for all array options and the X variable.`;
+                                                }
+                                                else {
+                                                    result = sumOfAllFears(inputX);
+                                                    document.getElementById('resultPlacement').innerHTML = `${result}`;
+                                                }
+                                            };
                                             
                                         </code>
                                     </pre>
@@ -109,20 +121,55 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">HTML 5</button></h3>
+                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                function sumOfAllFears()
+                            </button></h3>
                             <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function sumOfAllFears() {
+
+                                                //Step 1: Get User Input & Establish Variables
+                                                let valX = document.getElementById("inputX").value;
                                             
-                                                Swal.fire(msg);
+                                                let val1 = Number(document.getElementById("input3").value);
+                                                let val2 = Number(document.getElementById("input7").value);
+                                                let val3 = Number(document.getElementById("input10").value);
+                                                let val4 = Number(document.getElementById("input15").value);
+                                            
+                                                let result = [];
+                                            
+                                                //Step 2: Do Something With Input
+                                                for (let i = 1; i <= 1; i++) {
+                                            
+                                                    if (valX == val1 + val2) {
+                                                        result.push((val1) + " and " + (val2) + " from your array add up to equal your X variable, " + (valX));
+                                                    }
+                                                    else if (valX == val1 + val3) {
+                                                        result.push((val1) + " and " + (val3) + " from your array add up to equal your X variable, " + (valX));
+                                                    }
+                                                    else if (valX == val1 + val4) {
+                                                        result.push((val1) + " and " + (val4) + " from your array add up to equal your X variable, " + (valX));
+                                                    }
+                                                    else if (valX == val2 + val3) {            
+                                                        result.push((val2) + " and " + (val3) + " from your array add up to equal your X variable, " + (valX));
+                                                    }
+                                                    else if (valX == val2 + val4) {            
+                                                        result.push((val2) + " and " + (val4) + " from your array add up to equal your X variable, " + (valX));
+                                                    }
+                                                    else if (valX == val3 + val4) {            
+                                                        result.push((val3) + " and " + (val4) + " from your array add up to equal your K variable, " + (valX));
+                                                    }
+                                                    //If valX does not successfully compare
+                                                    else {
+                                                        result.push("Sorry, no two numbers of your array can add together to equal your X variable, " + (valX));
+                                                    }
+                                                }
+                                                //Step 3: Display Result to User
+                                                return result;
                                             }
                                             
                                         </code>
@@ -130,30 +177,7 @@
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">CSS 3</button></h3>
-                            <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    
-                                    <pre class="line-numbers">
-                                        <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
-                                            
-                                                msg = document.getElementById("message").value;
-                                            
-                                                Swal.fire(msg);
-                                            }
-                                            
-                                        </code>
-                                    </pre>
-
-                                </div>
-                            </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="col col-md-4">
@@ -163,9 +187,13 @@
                                 <div class="text-center">
                                     <div class="h6">Have more questions?</div>
                                     <p class="mb-4">
-                                        
+                                        Get in touch through my website!
                                     </p>
-                                    <div class="h6">Contact Me!</div>
+                                    <div class="d-flex justify-content-center">
+                                        <a type="button" href="https://helloshyann.com/#contact" target="_blank" class="btn hvr-pulse-grow btn-outline-dark">
+                                            Contact Me
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

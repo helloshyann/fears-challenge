@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME by Shyann Jobe</title>
+    <title>Sum of All Fears by Shyann Jobe</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="img/mark-white.png" class="d-inline-block aligin-text-top" height="35"> 
-                APP NAME
+                Sum of All Fears
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                         <a class="nav-link" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">The Repo</a>
+                        <a class="nav-link" href="https://github.com/helloshyann/fears-challenge" target="_blank">The Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://helloshyann.com" target="_blank">Portfolio</a>
@@ -72,19 +72,68 @@
     <section class="flex-shrink-0 py-5">
         <div class="container px-5 my-5">
             <div class="card text-center p-3">
-                <h1 class="fw-bolder animate__animated animate__bounceIn">App UI Goes Here</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+                <h1 class="fw-bolder animate__animated animate__bounceIn">Calculations with Arrays</h1>
+                <p class="lead fw-normal text-muted mb-0">
+                    Enter a number value for the X variable, and then enter four values for your array.
+                     The algorithim will calculate whether or not any of the numbers in your given array equal 
+                     the sum of your X variable.
+                </p>
             </div>
             
-        <hr>
-           <form>
-               <input id="message" type="text" placeholder="Enter a message" required>
-               <button id="btnSubmit" type="button" class="btn hvr-pulse-grow">Display</button>
-           </form>
+            <hr>
+           
+                <!--Input Row-->
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="number" id="inputX" size="15" placeholder="Enter variable X">
+                    </div>
+                </div>
 
+            <hr>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="number" id="input3" size="3" value="3" placeholder="3...">
+                    </div>
+                    <div class="col text-center">
+                        <input type="number" id="input7" size="3" value="7" placeholder="7...">
+                    </div>
+                    <div class="col text-center">
+                        <input type="number" id="input10" size="3" value="10" placeholder="10...">
+                    </div>
+                    <div class="col text-center">
+                        <input type="number" id="input15" size="3" value="15" placeholder="15...">
+                    </div>
+                </div>
+
+            <hr>
+
+                <!--Submit Button-->
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal" id="addForX">
+                            CALCULATE
+                        </button>
+                    </div>
+                </div>
         </div>
     </section>
 
+    <!--Results Modal Pop Up-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">                
+                <div class="modal-body text-center">                    
+                    <span id="resultPlacement">
+                        <!--Results content goes here-->
+                    </span>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Footer Section -->
     <footer class="footer sticky-footer mt-auto py-3">
@@ -127,7 +176,7 @@
     <!-- Javascript -->
     <script src="js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", displayMessage);
+        document.getElementById("addForX").addEventListener('click', addForX);
     </script>
 </body>
 

@@ -1,1 +1,1 @@
-# js-template
+# Sum of All Fears Coding Challenge
